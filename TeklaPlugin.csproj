@@ -1,0 +1,46 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net48</TargetFramework>
+    <OutputType>Library</OutputType>
+    <UseWindowsForms>true</UseWindowsForms>
+    <AssemblyTitle>Tekla Model Connector Plugin</AssemblyTitle>
+    <AssemblyDescription>Tekla Structures 모델 연결 플러그인</AssemblyDescription>
+    <AssemblyCompany>Your Company</AssemblyCompany>
+    <AssemblyProduct>Tekla Model Connector</AssemblyProduct>
+    <AssemblyCopyright>Copyright © 2024</AssemblyCopyright>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+    <FileVersion>1.0.0.0</FileVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="Tekla.Structures">
+      <HintPath>$(TEKLA_STRUCTURES_PATH)\nt\bin\Tekla.Structures.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Tekla.Structures.Model">
+      <HintPath>$(TEKLA_STRUCTURES_PATH)\nt\bin\Tekla.Structures.Model.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Tekla.Structures.Plugins">
+      <HintPath>$(TEKLA_STRUCTURES_PATH)\nt\bin\Tekla.Structures.Plugins.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Tekla.Structures.Geometry3d">
+      <HintPath>$(TEKLA_STRUCTURES_PATH)\nt\bin\Tekla.Structures.Geometry3d.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Drawing" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="TeklaPlugin.cs" />
+    <Compile Include="MainForm.cs" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <TEKLA_STRUCTURES_PATH Condition="'$(TEKLA_STRUCTURES_PATH)' == ''">C:\Program Files\Tekla Structures</TEKLA_STRUCTURES_PATH>
+  </PropertyGroup>
+
+</Project>
